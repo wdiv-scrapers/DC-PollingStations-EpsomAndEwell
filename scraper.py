@@ -1,4 +1,4 @@
-from gml_scraper import scrape
+from dc_base_scrapers.xml_scraper import GmlScraper
 
 
 stations_url = "http://myeebc.epsom-ewell.gov.uk/getOWS.ashx?MapSource=EEBC/inspire&service=WFS&version=1.1.0&request=GetFeature&Typename=pollingstations"
@@ -33,5 +33,7 @@ districts_fields = {
 council_id = 'E07000208'
 
 
-scrape(stations_url, council_id, 'stations', stations_fields, 'ogc_fid')
-scrape(districts_url, council_id, 'districts', districts_fields, 'ogc_fid')
+stations_scraper = GmlScraper(stations_url, council_id, 'stations', stations_fields, 'ogc_fid')
+stations_scraper.scrape()
+districts_scraper = GmlScraper(districts_url, council_id, 'districts', districts_fields, 'ogc_fid')
+districts_scraper.scrape()
