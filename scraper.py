@@ -1,7 +1,7 @@
 from dc_base_scrapers.xml_scraper import GmlScraper
 
 
-stations_url = "http://myeebc.epsom-ewell.gov.uk/getOWS.ashx?MapSource=EEBC/inspire&service=WFS&version=1.1.0&request=GetFeature&Typename=pollingstations"
+stations_url = "https://maps.epsom-ewell.gov.uk/getOWS.ashx?MapSource=EEBC/inspire&service=WFS&version=1.1.0&request=GetFeature&Typename=pollingstations"
 stations_fields = {
     '{http://mapserver.gis.umn.edu/mapserver}ogc_fid': 'ogc_fid',
     '{http://mapserver.gis.umn.edu/mapserver}objectid': 'objectid',
@@ -16,7 +16,7 @@ stations_fields = {
     '{http://mapserver.gis.umn.edu/mapserver}url': 'url',
 }
 
-districts_url = "http://myeebc.epsom-ewell.gov.uk/getOWS.ashx?MapSource=EEBC/inspire&service=WFS&version=1.1.0&request=GetFeature&Typename=pollingdistricts"
+districts_url = "https://maps.epsom-ewell.gov.uk/getOWS.ashx?MapSource=EEBC/inspire&service=WFS&version=1.1.0&request=GetFeature&Typename=pollingdistricts"
 districts_fields = {
     '{http://mapserver.gis.umn.edu/mapserver}ogc_fid': 'ogc_fid',
     '{http://mapserver.gis.umn.edu/mapserver}objectid': 'objectid',
