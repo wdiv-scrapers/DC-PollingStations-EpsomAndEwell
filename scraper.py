@@ -18,7 +18,7 @@ districts_fields = {
     "{http://mapserver.gis.umn.edu/mapserver}pollingplace": "pollingplace",
 }
 
-council_id = "E07000208"
+council_id = "EPS"
 
 
 stations_scraper = GmlScraper(
