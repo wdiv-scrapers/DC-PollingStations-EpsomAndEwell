@@ -20,12 +20,19 @@ districts_fields = {
 
 council_id = "EPS"
 
+class CustomScraper(GmlScraper):
+
+    def process_feature(self, feature, tree):
+        record = super().process_feature(feature, tree)
+        record['id'] = feature[0].attrib['{http://www.opengis.net/gml}id']
+        return record
+
 
 stations_scraper = GmlScraper(
     stations_url, council_id, "stations", stations_fields, "psnumber"
 )
 stations_scraper.scrape()
-districts_scraper = GmlScraper(
-    districts_url, council_id, "districts", districts_fields, "district"
+districts_scraper = CustomScraper(
+    districts_url, council_id, "districts", districts_fields, "id"
 )
 districts_scraper.scrape()
